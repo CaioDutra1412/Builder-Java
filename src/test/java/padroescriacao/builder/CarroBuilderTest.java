@@ -11,8 +11,10 @@ class CarroBuilderTest {
         try {
             CarroBuilder carroBuilder = new CarroBuilder();
             Carro carro = carroBuilder
-                    .setAno(Integer.parseInt("2023"))
                     .setModelo("Compass")
+                    .setMarca("Jeep")
+                    .setChassi("1G8ZK5277WZ313629")
+                    .setRenavam("J65432198765")
                     .build();
            fail();
         } catch (IllegalArgumentException e) {
@@ -25,8 +27,10 @@ class CarroBuilderTest {
         try {
             CarroBuilder carroBuilder = new CarroBuilder();
             Carro carro = carroBuilder
-                    .setAno(1)
-                    .setModelo("Compass")
+                    .setAno(2023)
+                    .setMarca("Jeep")
+                    .setChassi("1G8ZK5277WZ313629")
+                    .setRenavam("J65432198765")
                     .build();
             fail();
         } catch (IllegalArgumentException e) {
@@ -38,9 +42,11 @@ class CarroBuilderTest {
     void retornarCarroValido() {
         CarroBuilder carroBuilder = new CarroBuilder();
         Carro carro = carroBuilder
-                .setAno(1)
+                .setAno(2023)
                 .setModelo("Compass")
                 .setMarca("Jeep")
+                .setChassi("1G8ZK5277WZ313629")
+                .setRenavam("J65432198765")
                 .build();
 
         assertNotNull(carro);
